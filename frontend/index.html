@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Pedidos</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Sistema de Pedidos</h1>
+            <p>Crie, liste e compartilhe pedidos por WhatsApp.</p>
+        </header>
+
+        <section class="card">
+            <h2>Novo Pedido</h2>
+            <form id="order-form">
+                <div id="items-list"></div>
+                <button type="button" id="add-item">Adicionar item</button>
+
+                <label for="discount">Desconto</label>
+                <select id="discount" name="discount">
+                    <option value="none">Sem desconto</option>
+                    <option value="10%">10%</option>
+                    <option value="20%">20%</option>
+                </select>
+
+                <button type="submit" class="primary">Enviar pedido</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Pedidos</h2>
+            <div id="orders"></div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

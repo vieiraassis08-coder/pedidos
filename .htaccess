@@ -1,0 +1,7 @@
+RewriteEngine On
+DirectoryIndex frontend/index.html
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^pedidos$ backend/index.php [L,QSA]
+RewriteRule ^pedidos/(.*)$ backend/index.php [L,QSA]
