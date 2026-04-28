@@ -1,0 +1,43 @@
+Classe Pedido
+  - id: int
+  - itens: ItemPedido[]
+  - discountType: string
+  - total: float
+  + calculateSubTotal(): float
+  + applyDiscount(strategy: DiscountStrategy): void
+  + toArray(): array
+
+Classe ItemPedido
+  - produto: Produto
+  - quantidade: int
+  + getSubtotal(): float
+  + toArray(): array
+
+Classe Produto
+  - id: int
+  - nome: string
+  - preco: float
+  + toArray(): array
+
+Classe PedidoFactory
+  + createPedido(data: array): Pedido
+
+Classe PedidoRepository (Singleton)
+  + getInstance(): PedidoRepository
+  + findAll(): Pedido[]
+  + save(pedido: Pedido): Pedido
+  + delete(id: int): bool
+
+Interface DiscountStrategy
+  + apply(amount: float): float
+
+Classes NoDiscountStrategy, PercentDiscountStrategy
+  + apply(amount: float): float
+
+Classe OrderSubject (Observer)
+  + attach(observer: OrderObserver): void
+  + notify(event: string, pedido: Pedido): void
+
+Classe OrderLoggerObserver
+  + update(event: string, pedido: Pedido): void
+  + getEvents(): array
