@@ -25,6 +25,20 @@ Sistema de pedidos com arquitetura em camadas, backend em PHP puro, frontend em 
    http://localhost:8080
    ```
 
+## Como rodar no GitHub Codespaces
+
+1. Faça push do projeto para um repositório GitHub.
+2. No GitHub, abra o repositório e clique em **Code → Codespaces → Create codespace on main**.
+3. Aguarde o Codespace iniciar. Ele usará a configuração em `.devcontainer/devcontainer.json`.
+4. No terminal do Codespace, verifique a porta aberta:
+   ```bash
+   curl http://localhost:8080
+   ```
+5. No GitHub Codespaces, abra a porta `8080` pelo painel **Ports**.
+6. Clique em **Open in Browser** para acessar a aplicação.
+
+> O `devcontainer` usa o `Dockerfile` do projeto para rodar o Apache/PHP no ambiente remoto.
+
 ## Testes
 
 Para validar o cálculo de total e aplicação de desconto:
